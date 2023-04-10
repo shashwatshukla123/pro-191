@@ -1,0 +1,11 @@
+Model Information:
+* title:	Free Iron Rod
+* source:	https://sketchfab.com/3d-models/free-iron-rod-8047c37dfde346258a5452e8da740ae7
+* author:	rakshigames (https://sketchfab.com/rakshigames)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Free Iron Rod" (https://sketchfab.com/3d-models/free-iron-rod-8047c37dfde346258a5452e8da740ae7) by rakshigames (https://sketchfab.com/rakshigames) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cartoon girl
+* source:	https://sketchfab.com/3d-models/cartoon-girl-5946811d8389499a95f1dbd1b061b325
+* author:	Stan (https://sketchfab.com/Stas_SayHallo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cartoon girl" (https://sketchfab.com/3d-models/cartoon-girl-5946811d8389499a95f1dbd1b061b325) by Stan (https://sketchfab.com/Stas_SayHallo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

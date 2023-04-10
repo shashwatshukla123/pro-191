@@ -1,0 +1,206 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component/dist/aframe-layout-component.min.js"></script>
+    <!--script src="https://unpkg.com/aframe-spe-particles-component@^1.0.4/dist/aframe-spe-particles-component.min.js"></script-->
+    <script src="dist/aframe-spe-particles-component.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene id="scene" inspector-plugin-recast>
+      
+      <a-sky color="#000000"></a-sky>
+      <a-camera position="0 8 15"></a-camera>
+      <a-assets timeout="10000">
+        <!-- _Loading assets..._ -->
+                <!-- <a-asset-item id="collider" src="./models/navmesh.gltf"></a-asset-item>-->
+        <a-asset-item id="chair" src="./models/pool_chairs/scene.gltf"></a-asset-item>
+       
+        <a-asset-item id="tree" src="./models/tree_for_games/scene.gltf"></a-asset-item>
+  
+        <a-asset-item id="photographer" src="./models/photographer/scene.gltf"></a-asset-item>
+
+        <a-asset-item id="cg" src="./models/cartoon_girl/scene.gltf"></a-asset-item>
+        <a-asset-item id="cb" src="./models/child_boy_character_animated_blender/scene.gltf"></a-asset-item>
+        <a-asset-item id="cn" src="./models/child_newsie_-_bioshock_infinite_model/scene.gltf"></a-asset-item>
+        <a-asset-item id="lg" src="./models/little_girl_-_bioshock_infinite_model/scene.gltf"></a-asset-item>
+        <a-asset-item id="rb" src="./models/running_boy/scene.gltf"></a-asset-item>
+
+        <a-asset-item id="ir" src="./models/free_iron_rod/scene.gltf"></a-asset-item>
+      </a-assets>
+           
+      <a-assets>
+        <a-mixin id="label" text="align: center; width: 10" position="0 -1.5 0"></a-mixin>
+      </a-assets>
+      
+    
+        <!--Others unimportant flames...-->
+        <a-entity
+            spe-particles__sparks="texture: assets/square.png; color: yellow, red; particle-count: 10; max-age: 0.5; max-age-spread: 0.4; velocity: 0 5 0; velocity-spread: 0 3 0; wiggle: 1 0 1; wiggle-spread: 5 0 5; emitter-scale: 50; size-spread: .5; randomize-velocity: true"
+            spe-particles__smoke="texture: assets/fog.png; velocity: .4 2 0; velocity-spread: 1.4 0 1.4; particle-count: 50; max-age: 4; size: 8,16; opacity: 0,1,0; color: #666,#222"
+            spe-particles__fire="texture: assets/explosion_sheet.png; texture-frames: 5 5; velocity: .4 .1 0; acceleration: 0 2 0; acceleration-spread: 0 2 0; velocity-spread: .4 0 .4; particle-count: 15; max-age: 1; size: 4,8; size-spread: 2; opacity: 1,0; wiggle: 0 1 0; blending: additive"
+            position="0 0 -10">
+          <a-text value="multiple particles" mixin="label"></a-text>
+        </a-entity>
+        <a-entity spe-particles="maxAge: 2; maxAgeSpread: 1; particleCount: 50; opacity: 0,1,1,0; positionSpread: 1 1 1; velocitySpread: .4 .4 .4; randomizePosition: true">
+          <a-text value="no texture" mixin="label"></a-text>
+        </a-entity>
+        <a-entity spe-particles="maxAge: 2; maxAgeSpread: 1; particleCount: 50; opacity: 0,1,1,0; positionSpread: 1 1 1;          velocitySpread: .4 .4 .4; hasPerspective: false; randomizePosition: true">
+          <a-text value="no texture, no perspective" mixin="label"></a-text>
+        </a-entity>
+
+      
+
+      <!-- Navigation Mesh -->
+    <a-entity id="navigation-mesh" gltf-model="#collider" visible="false" nav-mesh>
+    </a-entity>
+
+
+      <!--Flames-->
+     <!--
+      <a-entity position="10 5 -30 " spe-particles="        
+      color: purple; 
+      distribution: disc; 
+      randomize-velocity: true;
+      radius: 0.1; 
+      particle-count: 800; 
+      velocity: 1; 
+      velocity-spread: 4; 
+      drag: 50; 
+      max-age: 1;
+      duration: -2,
+      blending: additive;
+      active-multiplier: 100; 
+      size: 1, 1, 1, 0">
+      </a-entity>
+     -->
+
+      <a-entity position="-22 5.1 -8 " spe-particles="        
+      color: yellow,red; 
+      distribution: disc; 
+      randomize-velocity: true;
+      radius: 0.01; 
+      particle-count: 80; 
+      velocity: 1; 
+      velocity-spread: 2; 
+      drag: 50; 
+      max-age: 1;
+      duration: -2,
+      blending: additive;
+      active-multiplier: 10; 
+      size: 1, 1, 1, 0">
+      </a-entity>
+
+      <a-entity position="18.4 5 -10" spe-particles="        
+      color:  white,blue; 
+      distribution: sphere; 
+      randomize-velocity: true;
+      radius: 0.1; 
+      particle-count: 800; 
+      velocity: 1; 
+      velocity-spread: 2; 
+      drag: 50; 
+      max-age: 1;
+      duration: -2,
+      blending: additive;
+      active-multiplier: 100; 
+      size: 1, 1, 1, 0">
+      </a-entity>
+
+      <a-entity position="-3.1 8 0" spe-particles="        
+      color:  pink,white; 
+      distribution: sphere; 
+      randomize-velocity: true;
+      radius: 0.001; 
+      particle-count: 800; 
+      velocity: 1; 
+      velocity-spread: 0.02; 
+      drag: 30; 
+      max-age: 1;
+      duration: -1,
+      blending: additive;
+      active-multiplier: 100; 
+      size: 0.01, 0.01, 0.1, 0.1">
+      </a-entity>
+
+      <!--Background-->
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="104" height="104" color="#7BC8A4"></a-plane>
+      <a-assets>
+        <a-asset-item id="t21" src="./design_house_asset/scene.gltf"></a-asset-item>
+      </a-assets>  
+      
+
+      <a-entity>
+        <a-entity position="0 2 -10" scale="0.10 0.10 0.10" rotation="0 -5 0" gltf-model="#t21" shadow="cast: true; receive:true">
+        </a-entity>
+      </a-entity>
+  
+
+      <!--Child-->
+      <a-entity>
+        <a-entity position="30 2 -20" scale="0.05 0.05 0.05" rotation="0 150 0" gltf-model="#cg" shadow="cast: true; receive:true">
+        </a-entity>
+      </a-entity>
+
+      <a-entity>
+        <a-entity position="47 -1 -20" scale="4 4 4" rotation="0 -58 0" gltf-model="#cb" shadow="cast: true; receive:true">
+        </a-entity>
+      </a-entity>
+
+      <a-entity>
+        <a-entity position="-5 2 -20" scale="1 1 1" rotation="0 -10 0" gltf-model="#rb" shadow="cast: true; receive:true">
+        </a-entity>
+      </a-entity>
+
+      <a-entity>
+        <a-entity position="-25 2 -15" scale="3 3 3" rotation="0 -70 0" gltf-model="#cn" shadow="cast: true; receive:true">
+        </a-entity>
+      </a-entity>
+
+      <!--Stick-->
+      <a-entity>
+        <a-entity position="-19.95 5.4 -7" scale="0.01 0.01 0.01" rotation="0 -70 0" gltf-model="#ir" shadow="cast: true; receive:true">
+        </a-entity>
+        <a-entity position="-3.6 6.4 -7" scale="0.011 0.011 0.011" rotation="-30 70 90" gltf-model="#ir" shadow="cast: true; receive:true">
+        </a-entity>
+        <a-entity position="17.5 5.4 -7" scale="0.01 0.01 0.01" rotation="90 0 -20" gltf-model="#ir" shadow="cast: true; receive:true">
+        </a-entity>
+      </a-entity>
+    
+
+    <!--Photographer-->
+    <a-entity>
+      <a-entity position="30 2.3 -3" rotation="0 -100 0" scale="1 1 1" gltf-model="#photographer"
+        shadow="cast: true; receive: false">
+      </a-entity>
+    </a-entity>
+
+    <!--Trees-->
+
+    <a-entity position="-20 0 -45" rotation="0 0 0" scale="0.009 0.009 0.009" gltf-model="#tree"
+      shadow="cast: true; receive: false">
+    </a-entity>
+
+    <a-entity position="20 0 -40" rotation="0 0 0" scale="0.009 0.009 0.009" gltf-model="#tree"
+      shadow="cast: true; receive: false">
+    </a-entity>
+
+    <a-entity position="-52 0 -20" rotation="0 0 0" scale="0.009 0.009 0.009" gltf-model="#tree"
+      shadow="cast: true; receive: false">
+    </a-entity>
+
+    <!--Chairs-->
+
+    <a-entity position="50 2 -25" rotation="0 -50 0" scale="5 5 5" gltf-model="#chair"
+    shadow="cast: true; receive: false">
+  </a-entity>
+   
+
+    
+         
+    </a-scene>
+  </body>
+</html>
